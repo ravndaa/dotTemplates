@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "ravndaa",
+  "classifications": [ "api", "web", "C#10" ],
+  "identity": "Ravndaa.Web.QuickApi",
+  "name": "Quickstart Web Api",
+  "sourceName": "QuickApi",
+  "shortName": "quickapi",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
