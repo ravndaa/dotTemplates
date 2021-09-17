@@ -25,7 +25,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack -c Release --version-suffix ${{ env.RELEASE_VERSION }}
+      run: dotnet pack -c Release -p:PackageVersion=${{ env.RELEASE_VERSION }}
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
