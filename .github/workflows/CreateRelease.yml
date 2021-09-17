@@ -16,6 +16,8 @@ jobs:
       with:
         dotnet-version: '6.0.x'
         include-prerelease: true
+    - name: Set env
+      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
@@ -23,9 +25,9 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack -c Release
+      run: dotnet pack -c Release --version-suffix ${{ env.RELEASE_VERSION }}
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
-        files: bin/Release/ravndaa.dottemplates.1.0.0.nupkg
+        files: bin/Release/ravndaa.dottemplates.${{ env.RELEASE_VERSION }}.nupkg
         
