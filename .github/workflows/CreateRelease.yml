@@ -27,5 +27,5 @@ jobs:
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
-        files: bin/Release/*.nuget
+        files: bin/Release/ravndaa.dottemplates.1.0.0.nupkg
         
